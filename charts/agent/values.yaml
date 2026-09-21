@@ -1,4 +1,5 @@
 agent:
+  node_id: ''
   token: ''
   upstream_hostname: ''
   downstream_hostname: ''

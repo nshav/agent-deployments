@@ -5,5 +5,6 @@ metadata:
   namespace: {{ include "agent.namespaceName" . }}
 data:
   ADMIN_URL: "https://rlimit-panel.requestsbin.online"
+  NODE_ID: "{{ .Values.agent.node_id }}"
   UPSTREAM_HOSTNAME: "{{ .Values.agent.upstream_hostname }}"
   UPSTREAM_PROTOCOL: "{{ .Values.agent.upstream_protocol | default "https" }}"

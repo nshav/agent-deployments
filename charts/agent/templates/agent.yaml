@@ -45,5 +45,10 @@ spec:
               configMapKeyRef:
                 name: {{ .Chart.Name }}-env
                 key: ADMIN_URL
+          - name: NODE_ID
+            valueFrom:
+              configMapKeyRef:
+                name: {{ .Chart.Name }}-env
+                key: NODE_ID
         ports:
         - containerPort: 80
