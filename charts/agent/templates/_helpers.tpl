@@ -10,7 +10,7 @@ Common labels
 */}}
 {{- define "agent.labels" -}}
 app: {{ .Release.Name }}
-version: {{ .Release.AppVersion }}
+version: {{ .Chart.AppVersion }}
 {{- end }}
 
 {{/*
