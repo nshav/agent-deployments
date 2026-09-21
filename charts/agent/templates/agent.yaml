@@ -1,0 +1,49 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ include "agent.namespaceName" . }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "agent.labels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "agent.labels" . | nindent 8 }}
+    spec:
+      {{- if .Values.agent.upstream_ip }}
+      hostAliases:
+        - ip: "{{ .Values.agent.upstream_ip }}"
+          hostnames:
+            - "{{ .Values.agent.upstream_hostname }}"
+      {{- end }}
+      containers:
+      - image: nikshav/rate-limiter-agent:sha-10da9c8
+        imagePullPolicy: IfNotPresent
+        name: agent
+        env:
+          - name: TOKEN                
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Chart.Name }}-token
+                key: TOKEN
+          - name: UPSTREAM_HOSTNAME
+            valueFrom:
+              configMapKeyRef:
+                name: {{ .Chart.Name }}-env
+                key: UPSTREAM_HOSTNAME
+          - name: UPSTREAM_PROTOCOL
+            valueFrom:
+              configMapKeyRef:
+                name: {{ .Chart.Name }}-env
+                key: UPSTREAM_PROTOCOL
+          - name: ADMIN_URL
+            valueFrom:
+              configMapKeyRef:
+                name: {{ .Chart.Name }}-env
+                key: ADMIN_URL
+        ports:
+        - containerPort: 80

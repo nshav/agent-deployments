@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: agent-env
+  namespace: agent
+data:
+  ADMIN_URL: "http://rlimit-panel.requestsbin.online"
+  UPSTREAM_HOSTNAME: "goods.requestsbin.online"
+  UPSTREAM_PROTOCOL: "https"

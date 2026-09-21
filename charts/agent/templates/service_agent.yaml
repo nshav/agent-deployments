@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-svc
+  namespace: {{ include "agent.namespaceName" . }}
+  labels:
+    {{- include "agent.labels" . | nindent 8 }}
+spec:
+  ports:
+  - name: {{ .Chart.Name }}-port
+    port: 80
+    targetPort: 8080
+  selector:
+    app: {{ .Release.Name }}

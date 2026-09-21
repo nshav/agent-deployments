@@ -1,0 +1,6 @@
+{{- if (.Values.namespaceCreation | default dict).name }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.namespaceCreation.name }}
+{{- end }}

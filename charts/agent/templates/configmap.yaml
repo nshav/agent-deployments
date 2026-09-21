@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-env
+  namespace: {{ include "agent.namespaceName" . }}
+data:
+  ADMIN_URL: "https://rlimit-panel.requestsbin.online"
+  UPSTREAM_HOSTNAME: "{{ .Values.agent.upstream_hostname }}"
+  UPSTREAM_PROTOCOL: "{{ .Values.agent.upstream_protocol | default "https" }}"
