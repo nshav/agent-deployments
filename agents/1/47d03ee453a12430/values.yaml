@@ -1,4 +1,0 @@
-agent:
-  token: 'f8dfcc4fdbd6e5d7e507f566693210df1f5d96a04f34500d7ac2df8e3df2005e'
-  upstream_hostname: 'httpbin.requestsbin.online'
-  downstream_hostname: 'test-httpbin.requestsbin.online'
