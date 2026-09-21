@@ -1,6 +1,6 @@
 agent:
-  token: '4e68fb4f2dfab2eff0ff4848e04b4ef39d8746eb8f4a1efdae1d3a40778fb26d'
-  upstream_hostname: 'httpbin.requestsbin.online'
-  downstream_hostname: 'httpbin-rl.requestsbin.online'
-  # upstream_ip: '1.2.3.4'
+  token: ''
+  upstream_hostname: ''
+  downstream_hostname: ''
+  # upstream_ip: ''
 

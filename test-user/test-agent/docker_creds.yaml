@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: docker-auth
-  namespace: agent
-data:
-  docker-server:  "aHR0cHM6Ly9odWIuZG9ja2VyLmNvbS9yZXBvc2l0b3JpZXMvbmlrc2hhdgo="
-  docker-username: "bmlrc2hhdgo="
-  docker-password: "ZGNrcl9wYXRfeFdJNERwb1NwVk5VREEwZ3dEUTAwNkxvc1lVCg=="

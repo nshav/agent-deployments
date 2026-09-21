@@ -21,7 +21,7 @@ spec:
             - "{{ .Values.agent.upstream_hostname }}"
       {{- end }}
       containers:
-      - image: nikshav/rate-limiter-agent:sha-10da9c8
+      - image: nikshav/rate-limiter-agent:1.0.1
         imagePullPolicy: IfNotPresent
         name: agent
         env:
