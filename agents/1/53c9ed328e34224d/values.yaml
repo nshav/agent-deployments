@@ -1,0 +1,5 @@
+agent:
+  node_id: '53c9ed328e34224d'
+  token: '19d41a94570359ae774fbe0c033989c85a96da32198e856c9ae9d089f612156f'
+  upstream_hostname: 'httpbin.requestsbin.online'
+  downstream_hostname: 'httpbin-rl.requestsbin.online'
